@@ -4,27 +4,36 @@
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.roll.numberpicker.MainActivity">
 
-    <TextView
-        android:id="@+id/timer_txt"
+    <LinearLayout
+        android:id="@+id/timer_layout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerInParent="true"
-        android:padding="10dp"
-        android:text="00:00:00"
-        android:textSize="40sp" />
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="hh : mm : ss" />
+
+        <TextView
+            android:id="@+id/timer_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="00:00:00"
+            android:textSize="40sp" />
+    </LinearLayout>
 
     <LinearLayout
         android:id="@+id/npickers"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/timer_txt"
+        android:layout_below="@id/timer_layout"
         android:layout_centerInParent="true"
         android:orientation="horizontal">
 
@@ -61,6 +70,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Cancel" />
+
         <Button
             android:id="@+id/btn_reset"
             android:layout_width="wrap_content"
