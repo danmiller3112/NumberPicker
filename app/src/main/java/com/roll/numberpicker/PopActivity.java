@@ -2,13 +2,14 @@ package com.roll.numberpicker;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.NumberPicker;
 import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener, NumberPicker.OnValueChangeListener {
+public class PopActivity extends AppCompatActivity implements View.OnClickListener, NumberPicker.OnValueChangeListener {
 
     private TextView timerTxt;
     private NumberPicker npHH, npMM, npSS;
@@ -19,7 +20,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_pop);
+
+        DisplayMetrics dm = new DisplayMetrics();
+        getWindowManager().getDefaultDisplay().getMetrics(dm);
+
+        int width = dm.widthPixels;
+        int height = dm.heightPixels;
+
+        getWindow().setLayout((int) (width * .8), (int) (height * .6));
+
 
         timerTxt = (TextView) findViewById(R.id.timer_txt);
         startBtn = (Button) findViewById(R.id.btn_start);
