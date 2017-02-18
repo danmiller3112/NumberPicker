@@ -13,6 +13,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private TextView timerTxt;
     private NumberPicker npHH, npMM, npSS;
     private Button startBtn, resetBtn, cancelBtn;
+    private int mmDef = 5;
 
 
     @Override
@@ -38,6 +39,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         npMM.setMaxValue(59);
         npSS.setMinValue(0);
         npSS.setMaxValue(59);
+
+        npMM.setValue(mmDef);
+        timerTxt.setText("00:0" + mmDef + ":00");
 
         npHH.setOnValueChangedListener(this);
         npMM.setOnValueChangedListener(this);
